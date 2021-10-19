@@ -8,7 +8,7 @@ import java.util.*
 @Table("userjourney")
 data class UserJourney(
     @PrimaryKey(value = "directionid")
-    val directionId: UUID,
+    val directionId: UUID = UUID.randomUUID(),
     @Column(value = "start")
     val start: Marker,
     @Column(value = "end")

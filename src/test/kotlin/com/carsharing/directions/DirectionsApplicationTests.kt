@@ -49,7 +49,7 @@ class DirectionsApplicationTests {
     }
 
     private fun createMarker(lon: Long, lat: Long) = Marker(
-        lon = lon,
+        lng = lon,
         lat = lat
     )
 
