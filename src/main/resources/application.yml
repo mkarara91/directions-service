@@ -1,0 +1,15 @@
+server:
+  port: ${PORT:8081}
+
+spring:
+  data:
+    cassandra:
+      keyspace-name: ${CASSANDRA_KEYSPACE:carsharing_directions}
+      contact-points: ${CASSANDRA_NODE_IPS:localhost}
+      local-datacenter: datacenter1
+      password: ${CASSANDRA_NODE_PASSWORD:password}
+      username: ${CASSANDRA_NODE_USERNAME:user}
+      port: ${CASSANDRA_NODE_PORT:9042}
+      schema-action: CREATE_IF_NOT_EXISTS
+      request:
+        consistency: local_quorum

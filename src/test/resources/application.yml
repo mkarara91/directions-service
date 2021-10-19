@@ -1,0 +1,10 @@
+spring:
+  data:
+    cassandra:
+      keyspace-name: carsharing_directions
+      contact-points: localhost
+      port: 9142
+      local-datacenter: datacenter1
+      schema-action: create_if_not_exists
+      request:
+        consistency: local_quorum
