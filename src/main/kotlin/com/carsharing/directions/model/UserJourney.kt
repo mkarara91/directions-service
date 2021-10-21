@@ -14,7 +14,7 @@ data class UserJourney(
     @Column(value = "end")
     val end: Marker,
     @Column(value = "journey")
-    val journey: Set<Marker>,
+    val journey: List<Marker>,
     @Column(value = "deleted")
     val deleted: Boolean
 )

@@ -4,4 +4,4 @@ import org.springframework.data.cassandra.core.mapping.UserDefinedType
 
 @UserDefinedType
 data class Marker(
-    val lng: Long, val lat: Long)
+    val lng: Double, val lat: Double)

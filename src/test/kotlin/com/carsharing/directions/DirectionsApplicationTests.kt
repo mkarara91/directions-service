@@ -48,12 +48,12 @@ class DirectionsApplicationTests {
         }
     }
 
-    private fun createMarker(lon: Long, lat: Long) = Marker(
+    private fun createMarker(lon: Double, lat: Double) = Marker(
         lng = lon,
         lat = lat
     )
 
-    private fun createDirection(directionID: UUID = UUID.randomUUID(), start: Marker, end: Marker, journey: Set<Marker>) =
+    private fun createDirection(directionID: UUID = UUID.randomUUID(), start: Marker, end: Marker, journey: List<Marker>) =
         UserJourney(
             directionId = directionID,
             start = start,
@@ -68,9 +68,9 @@ class DirectionsApplicationTests {
         @Test
         fun shouldCreateJourney() {
             //given
-            val userJourneyMarkers = setOf<Marker>(createMarker(50, 50), createMarker(40, 40), createMarker(30, 30))
+            val userJourneyMarkers = listOf(createMarker(50.0, 50.0), createMarker(40.0, 40.0), createMarker(30.0, 30.0))
             val userJourney: UserJourney =
-                createDirection(directionID = uuid, start = createMarker(10, 20), end = createMarker(30, 40), userJourneyMarkers)
+                createDirection(directionID = uuid, start = createMarker(10.0, 20.0), end = createMarker(30.0, 40.0), userJourneyMarkers)
             val headers = HttpHeaders()
             headers.set("Content-Type", MediaType.APPLICATION_JSON_VALUE)
             val requestWithHeaders = HttpEntity(userJourney, headers)
